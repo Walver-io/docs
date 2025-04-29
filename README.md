@@ -1,5 +1,21 @@
 ---
 icon: file-lines
+cover: .gitbook/assets/Captura de pantalla 2025-04-29 194438.png
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
 ---
 
 # Walver.io Documentation
