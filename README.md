@@ -1,0 +1,23 @@
+# Walver.io Documentation
+
+Welcome to the official documentation for Walver.io, a powerful wallet verification service for blockchain applications.
+
+## Table of Contents
+
+- [Introduction](introduction.md)
+- [Getting Started](getting-started.md)
+- [Verification Process](verification-process.md)
+- [SDK Documentation](sdk-documentation.md)
+- [API Reference](api-reference.md)
+- [Creator Dashboard](creator-dashboard.md)
+- [Token Gating](token-gating.md)
+- [Webhook Integration](webhook-integration.md)
+- [Security Features](security-features.md)
+- [Best Practices](best-practices.md)
+- [FAQ](faq.md)
+
+## About This Documentation
+
+This documentation provides comprehensive information about Walver.io, its features, and how to use the service effectively for wallet verification. It is designed for both developers integrating the service and creators using the dashboard.
+
+For support or questions, please contact the Walver.io team. 
