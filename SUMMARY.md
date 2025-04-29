@@ -10,6 +10,7 @@
 * [Best Practices](best-practices.md)
 * [Security Features](security-features.md)
 * [Walver SDK Documentation](sdk-documentation.md)
+* [JavaScript Widget Documentation](js-widget-documentation.md)
 * [Frequently Asked Questions (FAQ)](faq.md)
 
 ## Api reference
