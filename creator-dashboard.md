@@ -1,7 +1,5 @@
 ---
 icon: grid-horizontal
-cover: .gitbook/assets/Captura de pantalla 2025-04-29 194438.png
-coverY: 0
 layout:
   cover:
     visible: true

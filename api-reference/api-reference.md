@@ -1,8 +1,6 @@
 ---
 description: This section provides detailed information about the Walver.io API endpoints.
 icon: flag-checkered
-cover: ../.gitbook/assets/Captura de pantalla 2025-04-29 194438.png
-coverY: 0
 layout:
   cover:
     visible: true
