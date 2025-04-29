@@ -1,6 +1,10 @@
+---
+icon: python
+---
+
 # Walver SDK Documentation
 
-The Walver SDK provides a convenient way to interact with the Walver API from your Python applications. It offers both synchronous and asynchronous clients for creating and managing wallet verification links.
+[The Walver SDK](https://github.com/walver-io/walver-sdk) provides a convenient way to interact with the Walver API from your Python applications. It offers both synchronous and asynchronous clients for creating and managing wallet verification links.
 
 ## Installation
 
@@ -16,26 +20,28 @@ pip install walver-sdk
 
 You can provide your API key in two ways:
 
-1. Pass it directly when initializing the client:
-   ```python
-   from walver_sdk import Walver
-   
-   walver = Walver(api_key="your-api-key")
-   ```
+1.  Pass it directly when initializing the client:
 
-2. Set it as an environment variable in your `.env` file:
-   ```env
-   WALVER_API_KEY=your-api-key
-   ```
-   ```python
-   from walver_sdk import Walver
-   
-   walver = Walver()  # Will use the API key from .env
-   ```
+    ```python
+    from walver_sdk import Walver
+
+    walver = Walver(api_key="your-api-key")
+    ```
+2.  Set it as an environment variable in your `.env` file:
+
+    ```env
+    WALVER_API_KEY=your-api-key
+    ```
+
+    ```python
+    from walver_sdk import Walver
+
+    walver = Walver()  # Will use the API key from .env
+    ```
 
 ### Base URL
 
-By default, the client uses `https://walver.io/api/`. You can change this by passing the `base_url` parameter:
+By default, the client uses `https://walver.io/`. You can change this by passing the `base_url` parameter:
 
 ```python
 walver = Walver(
@@ -86,26 +92,26 @@ verification_url = verification["verification_url"]
 
 #### Parameters
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| id | string | Yes | A unique identifier for the verification |
-| service_name | string | Yes | The name of your service (shown to users) |
-| chain | string | Yes | The blockchain to use (e.g., "solana", "ethereum") |
-| internal_id | string | No | An optional internal ID for your reference |
-| webhook | string | No | URL to call when verification is complete |
-| expiration | string/datetime | No | When the verification link expires |
-| secret | string | No | A secret key for webhook security |
-| redirect_url | string | No | URL to redirect after verification |
-| one_time | boolean | No | If true, the link can only be used once |
-| folder_id | string | No | ID of a folder to associate with |
-| custom_fields | list | No | List of custom fields to collect |
-| token_gate | boolean | No | Enable token gating |
-| token_address | string | No | Token address for gating (required if token_gate=True) |
-| token_amount | number | No | Minimum token amount (required if token_gate=True) |
-| is_nft | boolean | No | Whether the token is an NFT |
-| force_email_verification | boolean | No | Require email verification via OTP |
-| force_telegram_verification | boolean | No | Require Telegram verification |
-| force_twitter_verification | boolean | No | Require Twitter verification |
+| Parameter                     | Type            | Required | Description                                             |
+| ----------------------------- | --------------- | -------- | ------------------------------------------------------- |
+| id                            | string          | Yes      | A unique identifier for the verification                |
+| service\_name                 | string          | Yes      | The name of your service (shown to users)               |
+| chain                         | string          | Yes      | The blockchain to use (e.g., "solana", "ethereum")      |
+| internal\_id                  | string          | No       | An optional internal ID for your reference              |
+| webhook                       | string          | No       | URL to call when verification is complete               |
+| expiration                    | string/datetime | No       | When the verification link expires                      |
+| secret                        | string          | No       | A secret key for webhook security                       |
+| redirect\_url                 | string          | No       | URL to redirect after verification                      |
+| one\_time                     | boolean         | No       | If true, the link can only be used once                 |
+| folder\_id                    | string          | No       | ID of a folder to associate with                        |
+| custom\_fields                | list            | No       | List of custom fields to collect                        |
+| token\_gate                   | boolean         | No       | Enable token gating                                     |
+| token\_address                | string          | No       | Token address for gating (required if token\_gate=True) |
+| token\_amount                 | number          | No       | Minimum token amount (required if token\_gate=True)     |
+| is\_nft                       | boolean         | No       | Whether the token is an NFT                             |
+| force\_email\_verification    | boolean         | No       | Require email verification via OTP                      |
+| force\_telegram\_verification | boolean         | No       | Require Telegram verification                           |
+| force\_twitter\_verification  | boolean         | No       | Require Twitter verification                            |
 
 ### Managing Folders
 
@@ -213,27 +219,29 @@ except requests.HTTPError as e:
 ```
 
 Common exceptions:
-- `ValueError`: Raised for client-side validation errors
-- `requests.HTTPError`: Raised for server-side errors
-- `requests.Timeout`: Raised when the request times out
+
+* `ValueError`: Raised for client-side validation errors
+* `requests.HTTPError`: Raised for server-side errors
+* `requests.Timeout`: Raised when the request times out
 
 ## Custom Field Types
 
 When creating verifications, you can specify various types of custom fields:
 
-| Type | Description |
-|------|-------------|
-| text | Simple text input |
-| email | Email address with validation |
-| url | URL with validation |
-| twitter | Twitter handle |
-| telegram | Telegram username |
-| discord | Discord username |
-| number | Numeric input with validation |
-| date | Date input with validation |
-| wallet | Wallet address with validation |
+| Type     | Description                    |
+| -------- | ------------------------------ |
+| text     | Simple text input              |
+| email    | Email address with validation  |
+| url      | URL with validation            |
+| twitter  | Twitter handle                 |
+| telegram | Telegram username              |
+| discord  | Discord username               |
+| number   | Numeric input with validation  |
+| date     | Date input with validation     |
+| wallet   | Wallet address with validation |
 
 Example:
+
 ```python
 custom_fields=[
     {
@@ -351,4 +359,4 @@ verification = walver.create_verification(
 
 # Get all verifications in the folder
 verifications = walver.get_folder_verifications(folder_id=folder["id"])
-``` 
+```

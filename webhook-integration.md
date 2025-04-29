@@ -1,28 +1,34 @@
+---
+icon: webhook
+---
+
 # Webhook Integration
 
-Walver.io uses webhooks to notify your application when verifications are completed. This guide explains how to set up and handle webhook notifications securely.
+[Walver.io](https://walver.io) uses webhooks to notify your application when verifications are completed. This guide explains how to set up and handle webhook notifications securely.
 
 ## What are Webhooks?
 
-Webhooks are HTTP callbacks that are triggered by specific events in Walver.io. When a user completes a verification, Walver.io can send a POST request to a URL you specify, containing information about the verification.
+Webhooks are HTTP callbacks that are triggered by specific events in [Walver.io](https://walver.io). When a user completes a verification, [Walver.io](https://walver.io) can send a POST request to a URL you specify, containing information about the verification.
 
 This allows your application to:
-- Receive real-time notifications of completed verifications
-- Process verification data automatically
-- Update user permissions based on verification results
-- Trigger other actions in your application
+
+* Receive real-time notifications of completed verifications
+* Process verification data automatically
+* Update user permissions based on verification results
+* Trigger other actions in your application
 
 ## Setting Up Webhooks
 
 ### 1. Create a Webhook Endpoint
 
-First, you need to create an endpoint in your application that can receive webhook notifications. This should be a public URL that Walver.io can reach.
+First, you need to create an endpoint in your application that can receive webhook notifications. This should be a public URL that [Walver.io](https://walver.io) can reach.
 
-### 2. Configure the Webhook in Walver.io
+### 2. Configure the Webhook in [Walver.io](https://walver.io)
 
 When creating a verification, specify your webhook URL and (optionally) a secret key:
 
 Using the dashboard:
+
 1. Go to the "Create Verification" page
 2. Enter your webhook URL in the "Webhook URL" field
 3. Enter a secure secret key in the "Webhook Secret" field
@@ -48,6 +54,7 @@ verification = walver.create_verification(
 ### 3. Test Your Webhook
 
 To test your webhook integration:
+
 1. Create a verification with your webhook URL
 2. Complete the verification process
 3. Check your webhook endpoint logs to ensure the notification was received
@@ -55,7 +62,7 @@ To test your webhook integration:
 
 ## Webhook Payload
 
-When a verification is completed, Walver.io sends a JSON payload to your webhook endpoint containing the verification details:
+When a verification is completed, [Walver.io](https://walver.io) sends a JSON payload to your webhook endpoint containing the verification details:
 
 ```json
 {
@@ -98,7 +105,7 @@ For token-gated verifications, the payload includes additional token information
 
 ### Using a Webhook Secret
 
-To secure your webhook integration, you should always use a webhook secret. This is a shared secret key known only to your application and Walver.io. When a webhook is sent, Walver.io includes the secret key in the request body.
+To secure your webhook integration, you should always use a webhook secret. This is a shared secret key known only to your application and [Walver.io](https://walver.io). When a webhook is sent, [Walver.io](https://walver.io) includes the secret key in the request body.
 
 ### Best Practices for Webhook Security
 
@@ -112,10 +119,10 @@ To secure your webhook integration, you should always use a webhook secret. This
 
 ## Handling Webhook Failures
 
-Walver.io will attempt to deliver webhooks immediately after a verification is completed. However, if your endpoint is unavailable or returns an error, Walver.io will retry the delivery using an exponential backoff strategy:
+[Walver.io](https://walver.io) will attempt to deliver webhooks immediately after a verification is completed. However, if your endpoint is unavailable or returns an error, [Walver.io](https://walver.io) will retry the delivery using an exponential backoff strategy:
 
-- First retry: 30 seconds after the initial attempt
-- Second retry: 30 seconds after the first retry
-- Third retry: 30 seconds after the second retry
+* First retry: 30 seconds after the initial attempt
+* Second retry: 30 seconds after the first retry
+* Third retry: 30 seconds after the second retry
 
 After all retry attempts have failed, the webhook will be marked as failed.
