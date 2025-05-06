@@ -120,15 +120,15 @@ For enhanced identity verification, [Walver.io](https://walver.io) offers additi
 ### Telegram Verification
 
 1. Users provide their Telegram username
-2. They are directed to start a conversation with the Walver bot
-3. The bot verifies their Telegram account
+2. They are directed to start a conversation with the Walver bot with a specific payload
+3. The bot verifies the payload and confirms the user owns the specified Telegram account
 4. This confirms the user owns the specified Telegram account
 
 ### Twitter/X Verification
 
 1. Users provide their Twitter/X username
-2. They are instructed to post a specific tweet containing a verification code
-3. Walver.io verifies the post was made from the specified account
+2. They are instructed to follow a link to a verification page
+3. They are instructed to click a button to verify their account
 4. This confirms the user controls the Twitter account
 
 ## Secure Deployment
@@ -148,7 +148,6 @@ The production environment uses Docker containers with:
 1. **Application Logging**: All significant actions are logged
 2. **Error Tracking**: Errors are tracked and analyzed for security implications
 3. **Usage Patterns**: Unusual usage patterns trigger alerts
-4. **Continuous Integration**: Security tests run on each code change
 
 ## Security Best Practices for Users
 
@@ -158,10 +157,9 @@ When using [Walver.io](https://walver.io), we recommend these security best prac
 2. **Verify Signatures**: Always verify webhook signatures
 3. **Use HTTPS**: Only use HTTPS for webhooks and redirect URLs
 4. **Rotate Keys**: Regularly rotate API keys
-5. **Limit Access**: Restrict access to the creator dashboard
-6. **One-Time Links**: Use one-time links for sensitive verifications
-7. **Set Expirations**: Use expiration dates for verification links
-8. **Check Domains**: Ensure users are on the genuine walver.io domain
+5. **One-Time Links**: Use one-time links for sensitive verifications
+6. **Set Expirations**: Use expiration dates for verification links
+7. **Check Domains**: Ensure users are on the genuine walver.io domain
 
 ## Reporting Security Issues
 

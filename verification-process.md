@@ -144,8 +144,8 @@ verification = walver.create_verification(
 
 1. User provides their Twitter username
 2. System generates a verification link for Twitter
-3. User posts a specific tweet with a verification code
-4. System verifies the post to confirm ownership
+3. User follows a link to a verification page
+4. User clicks a button to verify their account
 
 To enable:
 
