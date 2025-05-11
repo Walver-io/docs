@@ -1,3 +1,21 @@
+---
+icon: python
+layout:
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Verify Crypto Signature
 
 The Verify Crypto Signature package is a Python library for verifying and working with cryptographic signatures from various blockchain networks. It currently supports EVM (Ethereum Virtual Machine) and Solana blockchain signatures.
