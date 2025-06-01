@@ -65,12 +65,13 @@ When a user receives a verification link, they experience the following flow:
 1. **Landing Page**: The user sees a verification page with your service name and instructions
 2. **Custom Fields**: If configured, the user sees forms for additional required information
 3. **Email Verification**: If enabled, the user verifies their email using a one-time code
-4. **Social Media Verification**: If enabled, the user verifies their social media accounts
-5. **Wallet Connection**: The user connects their wallet using a supported wallet adapter
-6. **Message Signing**: The user is prompted to sign a unique message
-7. **Token Verification**: If token gating is enabled, the system checks token ownership
-8. **Completion**: Upon successful verification, the user sees a success message
-9. **Redirection**: The user is redirected to the specified redirect URL (if configured)
+4. **Telephone Verification**: If enabled, the user verifies their telephone number using a one-time code
+5. **Social Media Verification**: If enabled, the user verifies their social media accounts
+6. **Wallet Connection**: The user connects their wallet using a supported wallet adapter
+7. **Message Signing**: The user is prompted to sign a unique message
+8. **Token Verification**: If token gating is enabled, the system checks token ownership
+9. **Completion**: Upon successful verification, the user sees a success message
+10. **Redirection**: The user is redirected to the specified redirect URL (if configured)
 
 ## Verification Types <a href="#verification-types" id="verification-types"></a>
 
@@ -109,6 +110,29 @@ verification = walver.create_verification(
             "id": "email",
             "type": "email",
             "name": "Email Address",
+            "required": True
+        }
+    ]
+)
+```
+
+#### Telephone Verification
+
+1. User provides their telephone number
+2. System sends a one-time code to the telephone number
+3. User enters the code to verify ownership of the telephone number
+
+To enable:
+
+```python
+verification = walver.create_verification(
+    # ... other parameters ...
+    force_telephone_verification=True,
+    custom_fields=[
+        {
+            "id": "telephone",
+            "type": "telephone",
+            "name": "Telephone Number",
             "required": True
         }
     ]
@@ -177,6 +201,7 @@ Custom fields allow you to collect additional information during the verificatio
 | url      | URL               | Valid URL format              |
 | twitter  | Twitter handle    | Valid Twitter username        |
 | telegram | Telegram username | Valid Telegram username       |
+| telephone| Telephone number  | Valid telephone number        |
 | discord  | Discord username  | Valid Discord username format |
 | number   | Numeric input     | Valid number                  |
 | date     | Date input        | Valid date format             |
