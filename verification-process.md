@@ -188,6 +188,31 @@ verification = walver.create_verification(
 )
 ```
 
+#### Discord Verification
+
+1. User provides their Discord username
+2. System generates a verification link for Discord
+3. User follows a link to a verification page
+4. User clicks a button to verify their account
+
+To enable:
+
+```python
+
+verification = walver.create_verification(
+    # ... other parameters ...
+    force_discord_verification=True,
+    custom_fields=[
+        {
+            "id": "discord",
+            "type": "discord",
+            "name": "Discord Username",
+            "required": True
+        }
+    ]
+)
+```
+
 ## Custom Fields <a href="#custom-fields" id="custom-fields"></a>
 
 Custom fields allow you to collect additional information during the verification process. Each field can be marked as required or optional.

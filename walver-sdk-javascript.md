@@ -127,6 +127,7 @@ const verificationUrl = verification.verification_url;
 | force_email_verification     | boolean          | No       | Require email verification via OTP                      |
 | force_telegram_verification  | boolean          | No       | Require Telegram verification                           |
 | force_twitter_verification   | boolean          | No       | Require Twitter verification                            |
+| force_discord_verification   | boolean          | No       | Require Discord verification                           |
 
 ## Managing Folders
 
