@@ -131,6 +131,13 @@ For enhanced identity verification, [Walver.io](https://walver.io) offers additi
 3. They are instructed to click a button to verify their account
 4. This confirms the user controls the Twitter account
 
+### Discord Verification
+
+1. Users provide their Discord username
+2. They are instructed to follow a link to a verification page
+3. They are instructed to click a button to verify their account
+4. This confirms the user controls the Discord account
+
 ## Secure Deployment
 
 The production environment uses Docker containers with:

@@ -58,6 +58,7 @@ After logging in, you'll be taken to the creator dashboard where you can:
      * **Force Email Verification**: (Optional) Enable if you want to force email verification
      * **Force Telegram Verification**: (Optional) Enable if you want to force telegram verification
      * **Force Twitter Verification**: (Optional) Enable if you want to force twitter verification
+     * **Force Discord Verification**: (Optional) Enable if you want to force discord verification
      * **Token Gate**: (Optional) Enable if the verification should be token gated
      * **Token Address**: (Optional) The address of the token to gate the verification
      * **Token Amount**: (Optional) The amount of the token to gate the verification

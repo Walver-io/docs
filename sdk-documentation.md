@@ -126,6 +126,7 @@ verification_url = verification["verification_url"]
 | force\_email\_verification    | boolean         | No       | Require email verification via OTP                      |
 | force\_telegram\_verification | boolean         | No       | Require Telegram verification                           |
 | force\_twitter\_verification  | boolean         | No       | Require Twitter verification                            |
+| force\_discord\_verification | boolean         | No       | Require Discord verification                           |
 
 ### Managing Folders
 
